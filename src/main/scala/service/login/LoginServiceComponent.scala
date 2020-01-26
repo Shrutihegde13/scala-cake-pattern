@@ -3,12 +3,11 @@ package service.login
 import authentication.AzureAuthenticationServiceComponent
 import logger.ApplicationLoggerComponent
 
-
 trait LoginServiceComponent {
 
   this : AzureAuthenticationServiceComponent with ApplicationLoggerComponent =>
 
-  val loginServiceImpl : LoginService
+  val loginService : LoginService
 
   class LoginService {
 
