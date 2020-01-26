@@ -1,13 +1,15 @@
 package service.login
 
-import authentication.AuthenticationService
-import logger.Logger
+import authentication.AzureAuthenticationService
+import logger.ApplicationLogger
 
-class LoginService(authenticationService: AuthenticationService, logger: Logger) {
+class LoginService {
+
+  this : AzureAuthenticationService with ApplicationLogger =>
 
   def login(userInfo : String): Boolean = {
-    logger.log(userInfo)
-    authenticationService.authenticate(userInfo)
+    applicationLoggerImpl.log(userInfo)
+    azureAuthenticationServiceImpl.authenticate(userInfo)
   }
   
 }
