@@ -12,9 +12,9 @@ trait LoginServiceComponent {
   class LoginService {
 
     def login(userInfo : String): Boolean = {
-      applicationLogger.log(userInfo)
-      azureAuthenticationService.authenticate(userInfo)
+      val userAuthenticated = azureAuthenticationService.authenticate(userInfo)
+      if (userAuthenticated) applicationLogger.log(userInfo) else applicationLogger.error(userInfo)
+      userAuthenticated
     }
-
   }
 }
