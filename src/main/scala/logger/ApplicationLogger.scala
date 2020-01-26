@@ -1,5 +1,11 @@
 package logger
 
-class ApplicationLogger extends Logger {
-  override def log(info: String): Unit = println("INFO : " + info)
+
+trait ApplicationLogger {
+
+  val applicationLoggerImpl : ApplicationLoggerImpl
+
+  class ApplicationLoggerImpl extends Logger {
+    override def log(info: String): Unit = println("INFO : " + info)
+  }
 }
