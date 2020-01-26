@@ -2,7 +2,7 @@ package authentication
 
 trait TestAuthenticationService {
 
-  val testAuthenticationServiceImpl : TestAuthenticationServiceImpl
+  val testAuthenticationServiceImpl : AuthenticationService
 
   class TestAuthenticationServiceImpl extends AuthenticationService {
     override def authenticate(userInfo: String): Boolean = true
