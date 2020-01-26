@@ -1,5 +1,12 @@
 package authentication
 
-class TestAuthenticationService extends AuthenticationService {
-  override def authenticate(userInfo: String): Boolean = true
+trait TestAuthenticationService {
+
+  val testAuthenticationServiceImpl : TestAuthenticationServiceImpl
+
+  class TestAuthenticationServiceImpl extends AuthenticationService {
+    override def authenticate(userInfo: String): Boolean = true
+  }
+
 }
+
