@@ -10,6 +10,6 @@ object ComponentRegistry extends LoginServiceComponent
 
   override val applicationLogger: Logger = new ApplicationLogger
   override val azureAuthenticationService: AuthenticationService = new AzureAuthenticationService
-  override val loginService: ComponentRegistry.LoginService = new LoginService
+  override val loginService: LoginService = new LoginService
 
 }
